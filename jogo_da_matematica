@@ -1,0 +1,97 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <locale.h>
+#include <time.h>
+
+int main(int argc, char *argv[]) {
+	setlocale(LC_ALL, "");
+	
+	srand(time(NULL));
+	
+	float usuario;
+	float numero1;
+	float numero2;
+	int operacao;
+	float resultado;
+	
+	int max;
+	int min;
+	
+	max = 4;
+	min = 1;
+	max++;
+	
+	operacao = rand() % (max - min) + min;
+	
+	max = 100;
+	min = 0;
+	max++;
+	
+	numero1 = rand() % (max - min) + min;
+	numero2 = rand() % (max - min) + min;
+	
+	
+	if(operacao == 4 && numero2 == 0){
+		
+		max = 100;
+		min = 1;
+		max++;
+		
+		numero2 = rand() % (max - min) + min;
+		
+	}
+	
+	switch(operacao){
+		case 1:{
+			resultado = numero1+numero2;
+			printf("Realize a soma entre %.0f e %.0f", numero1, numero2);
+			break;
+		}
+		
+		case 2:{
+			printf("Realize a subtração entre %.0f e %.0f", numero1, numero2);
+			resultado = numero1-numero2;
+			break;
+		}
+		
+		case 3:{
+			printf("Realize a multiplicação entre %.0f e %.0f", numero1, numero2);
+			resultado = numero1*numero2;
+			break;
+		}
+		
+		case 4:{
+			printf("Utilize nove casas decimais, caso forem diferentes de zero");
+			printf("\n\nRealize a divisão entre %.0f e %.0f", numero1, numero2);
+			resultado = numero1/numero2;
+			break;
+		}
+	}
+	
+	
+	
+	printf("\n\n\nDigite sua resposta: ");
+	scanf("%f", &usuario);
+	
+	
+	if(resultado == usuario){
+		
+		printf("\n\n\tParabéns, você acertou\n\n");
+		
+	}else{
+		
+		if(operacao == 4){
+			printf("\n\n\tConsidere todas as casas decimais até a nona, as quais forem diferentes de zero\n");
+		}else{
+			printf("\n\n\tA resposta certa é %.0f\n", resultado);
+		}
+		
+		printf("\n\tVocê errou\n\n");
+		
+	}
+	
+	
+	
+	
+	return 0;
+}

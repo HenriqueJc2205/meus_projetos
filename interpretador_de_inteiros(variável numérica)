@@ -1,0 +1,258 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <locale.h>
+
+//By Henrique Jucá
+
+int main(int argc, char *argv[]) {
+	setlocale(LC_ALL, "");
+	
+	int numero;
+	int milhar;
+	int centena;
+	int dezena;
+	int unidade;
+	
+	milhar = 0;
+	centena = 0;
+	dezena = 0;
+	unidade = 0;
+	
+	printf("Digite um número de 0 a 1000: ");
+	scanf("%d", &numero);
+	
+	//Casa dos milhares
+	if(numero == 1000){
+		
+		milhar = 1;
+		
+	}
+	
+	
+	
+	//Casa das centenas
+	if(numero < 1000 && numero !=0){
+		
+		centena = numero/100;
+		numero = numero - centena*100;
+		
+	}
+	
+	
+	
+	//Casa das dezenas
+	if(numero < 100 && numero !=0){
+		
+		dezena = numero/10;
+		numero = numero - dezena*10;
+		
+	}
+	
+	
+	
+	//Casa das unidades
+	if(numero < 10){
+	
+		unidade = numero;
+	
+	}
+	
+	
+	//Espaço inicial
+	printf("\n\n\t");
+	
+	
+	//Transcrever centenas e milhar
+	if(milhar == 1){
+		
+		printf("mil");
+		
+	}else if(centena == 9){
+		
+		printf("novecentos");
+		
+	}else if(centena == 8){
+		
+		printf("oitocentos");
+		
+	}else if(centena == 7){
+		
+		printf("setecentos");
+		
+	}else if(centena == 6){
+		
+		printf("seiscentos");
+		
+	}else if(centena == 5){
+		
+		printf("quinhentos");
+		
+	}else if(centena == 4){
+		
+		printf("quatrocentos");
+		
+	}else if(centena == 3){
+		
+		printf("trezentos");
+		
+	}else if(centena == 2){
+		
+		printf("duzentos");
+		
+	}else if(centena == 1 && dezena == 0 && unidade == 0){
+		
+		printf("cem");
+		
+	}else if(centena == 1 && (dezena != 0 || unidade != 0)){
+		
+		printf("cento");
+		
+	}
+	
+	
+	
+	//"e" depois das centenas
+	if(centena != 0 && (dezena != 0 || unidade != 0)){
+		
+		printf(" e ");
+		
+	}
+	
+	
+	
+	//Transcrever dezenas
+	if(dezena == 9){
+		
+		printf("noventa");
+		
+	}else if(dezena == 8){
+		
+		printf("oitenta");
+		
+	}else if(dezena == 7){
+		
+		printf("setenta");
+		
+	}else if(dezena == 6){
+		
+		printf("sessenta");
+		
+	}else if(dezena == 5){
+		
+		printf("cinquenta");
+		
+	}else if(dezena == 4){
+		
+		printf("quarenta");
+		
+	}else if(dezena == 3){
+		
+		printf("trinta");
+		
+	}else if(dezena == 2){
+		
+		printf("vinte");
+		
+	}else if(dezena == 1 && unidade == 9){
+		
+		printf("dezenove");
+		
+	}else if(dezena == 1 && unidade == 8){
+		
+		printf("dezoito");
+		
+	}else if(dezena == 1 && unidade == 7){
+		
+		printf("dezessete");
+		
+	}else if(dezena == 1 && unidade == 6){
+		
+		printf("dezesseis");
+		
+	}else if(dezena == 1 && unidade == 5){
+		
+		printf("quinze");
+		
+	}else if(dezena == 1 && unidade == 4){
+		
+		printf("quatorze");
+		
+	}else if(dezena == 1 && unidade == 3){
+		
+		printf("treze");
+		
+	}else if(dezena == 1 && unidade == 2){
+		
+		printf("doze");
+		
+	}else if(dezena == 1 && unidade == 1){
+		
+		printf("onze");
+		
+	}else if(dezena == 1 && unidade == 0){
+		
+		printf("dez");
+		
+	}
+	
+	
+	
+	//"e" depois das dezenas
+	if(dezena != 0 && dezena != 1 && unidade > 0){
+		
+		printf(" e ");
+		
+	}
+	
+	
+	
+	//Transcrever unidades
+	if(unidade == 9 && dezena != 1){
+		
+		printf("nove");
+		
+	}else if(unidade == 8 && dezena != 1){
+		
+		printf("oito");
+		
+	}else if(unidade == 7 && dezena != 1){
+		
+		printf("sete");
+		
+	}else if(unidade == 6 && dezena != 1){
+		
+		printf("seis");
+		
+	}else if(unidade == 5 && dezena != 1){
+		
+		printf("cinco");
+		
+	}else if(unidade == 4 && dezena != 1){
+		
+		printf("quatro");
+		
+	}else if(unidade == 3 && dezena != 1){
+		
+		printf("três");
+		
+	}else if(unidade == 2 && dezena != 1){
+		
+		printf("dois");
+		
+	}else if(unidade == 1 && dezena != 1){
+		
+		printf("um");
+		
+	}else if(unidade == 0 && dezena == 0 && centena == 0 && milhar == 0){
+		
+		printf("zero");
+		
+	}
+	
+	
+	//Espaço final
+	printf("\n\n");
+	
+	
+	return 0;
+}

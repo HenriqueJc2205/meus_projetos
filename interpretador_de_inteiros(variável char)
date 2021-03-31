@@ -1,0 +1,209 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <locale.h>
+
+//By Henrique Jucá
+
+int main(int argc, char *argv[]) {
+	setlocale(LC_ALL, "");
+	
+	
+	char numero[4];
+	
+	
+	printf("Digite um número de 0 a 1000: ");
+	scanf("%s", numero);
+	printf("\n\n\t");
+	
+	//Transcrever centenas e milhar
+	if(numero[0] == '1' && numero[1] == '0' && numero[2] == '0' && numero[3] == '0'){
+	
+		printf("mil");
+	
+	}else if(numero[0] == '9' && numero[1] != '\0' && numero[2] != '\0' && numero[3] == '\0'){
+	
+		printf("novecentos");
+	
+	}else if(numero[0] == '8' && numero[1] != '\0' && numero[2] != '\0' && numero[3] == '\0'){
+	
+		printf("oitocentos");
+	
+	}else if(numero[0] == '7' && numero[1] != '\0' && numero[2] != '\0' && numero[3] == '\0'){
+	
+		printf("setecentos");
+	
+	}else if(numero[0] == '6' && numero[1] != '\0' && numero[2] != '\0' && numero[3] == '\0'){
+	
+		printf("seiscentos");
+	
+	}else if(numero[0] == '5' && numero[1] != '\0' && numero[2] != '\0' && numero[3] == '\0'){
+	
+		printf("quinhentos");
+	
+	}else if(numero[0] == '4' && numero[1] != '\0' && numero[2] != '\0' && numero[3] == '\0'){
+	
+		printf("quatrocentos");
+	
+	}else if(numero[0] == '3' && numero[1] != '\0' && numero[2] != '\0' && numero[3] == '\0'){
+	
+		printf("trezentos");
+	
+	}else if(numero[0] == '2' && numero[1] != '\0' && numero[2] != '\0' && numero[3] == '\0'){
+	
+		printf("duzentos");
+	
+	}else if(numero[0] == '1' && numero[1] == '0' && numero[2] == '0' && numero[3] == '\0'){
+	
+		printf("cem");
+	
+	}else if(numero[0] == '1' && numero[1] != '\0' && numero[2] != '\0' && numero[3] == '\0'){
+	
+		printf("cento");
+		
+	}
+	
+	
+	
+	//"e" depois das centenas
+	if((numero[0] != '0' && numero[0] != '\0' && numero[1] != '0' && numero[1] != '\0' && numero[2] != '\0' && numero[3] == '\0') || (numero[0] != '0' && numero[0] != '\0' && numero[1] == '0' && numero[2] != '\0' && numero[2] != '0' && numero[3] == '\0')){
+	
+		printf(" e ");
+	
+	}
+	
+	
+	
+	//Transcrever dezenas
+	if((numero[0] == '9' && numero[1] != '\0' && numero[2] == '\0' && numero[3] == '\0') || (numero[1] == '9' && numero[2] != '\0' && numero[3] == '\0')){
+	
+		printf("noventa");
+	
+	}else if((numero[0] == '8' && numero[1] != '\0' && numero[2] == '\0' && numero[3] == '\0') || (numero[1] == '8' && numero[2] != '\0' && numero[3] == '\0')){
+	
+		printf("oitenta");
+		
+	}else if((numero[0] == '7' && numero[1] != '\0' && numero[2] == '\0' && numero[3] == '\0') || (numero[1] == '7' && numero[2] != '\0' && numero[3] == '\0')){
+	
+		printf("setenta");
+		
+	}else if((numero[0] == '6' && numero[1] != '\0' && numero[2] == '\0' && numero[3] == '\0') || (numero[1] == '6' && numero[2] != '\0' && numero[3] == '\0')){
+	
+		printf("secenta");
+		
+	}else if((numero[0] == '5' && numero[1] != '\0' && numero[2] == '\0' && numero[3] == '\0') || (numero[1] == '5' && numero[2] != '\0' && numero[3] == '\0')){
+	
+		printf("cinquenta");
+		
+	}else if((numero[0] == '4' && numero[1] != '\0' && numero[2] == '\0' && numero[3] == '\0') || (numero[1] == '4' && numero[2] != '\0' && numero[3] == '\0')){
+	
+		printf("quarenta");
+		
+	}else if((numero[0] == '3' && numero[1] != '\0' && numero[2] == '\0' && numero[3] == '\0') || (numero[1] == '3' && numero[2] != '\0' && numero[3] == '\0')){
+	
+		printf("trinta");
+		
+	}else if((numero[0] == '2' && numero[1] != '\0' && numero[2] == '\0' && numero[3] == '\0') || (numero[1] == '2' && numero[2] != '\0' && numero[3] == '\0')){
+	
+		printf("vinte");
+		
+	}else if((numero[0] == '1' && numero[1] == '9' && numero[2] == '\0' && numero[3] == '\0') || (numero[1] == '1' && numero[2] == '9' && numero[3] == '\0')){
+	
+		printf("dezenove");
+		
+	}else if((numero[0] == '1' && numero[1] == '8' && numero[2] == '\0' && numero[3] == '\0') || (numero[1] == '1' && numero[2] == '8' && numero[3] == '\0')){
+	
+		printf("dezoito");
+		
+	}else if((numero[0] == '1' && numero[1] == '7' && numero[2] == '\0' && numero[3] == '\0') || (numero[1] == '1' && numero[2] == '7' && numero[3] == '\0')){
+	
+		printf("dezessete");
+		
+	}else if((numero[0] == '1' && numero[1] == '6' && numero[2] == '\0' && numero[3] == '\0') || (numero[1] == '1' && numero[2] == '6' && numero[3] == '\0')){
+	
+		printf("dezesseis");
+		
+	}else if((numero[0] == '1' && numero[1] == '5' && numero[2] == '\0' && numero[3] == '\0') || (numero[1] == '1' && numero[2] == '5' && numero[3] == '\0')){
+	
+		printf("quinze");
+		
+	}else if((numero[0] == '1' && numero[1] == '4' && numero[2] == '\0' && numero[3] == '\0') || (numero[1] == '1' && numero[2] == '4' && numero[3] == '\0')){
+	
+		printf("quatorze");
+		
+	}else if((numero[0] == '1' && numero[1] == '3' && numero[2] == '\0' && numero[3] == '\0') || (numero[1] == '1' && numero[2] == '3' && numero[3] == '\0')){
+	
+		printf("treze");
+		
+	}else if((numero[0] == '1' && numero[1] == '2' && numero[2] == '\0' && numero[3] == '\0') || (numero[1] == '1' && numero[2] == '2' && numero[3] == '\0')){
+	
+		printf("doze");
+		
+	}else if((numero[0] == '1' && numero[1] == '1' && numero[2] == '\0' && numero[3] == '\0') || (numero[1] == '1' && numero[2] == '1' && numero[3] == '\0')){
+	
+		printf("onze");
+		
+	}else if((numero[0] == '1' && numero[1] == '0' && numero[2] == '\0' && numero[3] == '\0') || (numero[1] == '1' && numero[2] == '0' && numero[3] == '\0')){
+	
+		printf("dez");
+		
+	}
+	
+	
+	//"e" depois das dezenas
+	if((numero[0] != '\0' && numero[0] != '0' && numero[0] != '1' && numero[1] != '\0' && numero[1] != '0' && numero[2] == '\0' && numero[3] == '\0') || (numero[0] != '\0' && numero[0] != '0' && numero[1] != '\0' && numero[1] != '0' && numero[1] != '1' && numero[2] != '\0' && numero[2] != '0' && numero[3] == '\0')){
+	
+		printf(" e ");
+		
+	}
+	
+	
+	
+	//Transcrever unidades
+	if((numero[0] == '9' && numero[1] == '\0' && numero[2] == '\0' && numero[3] == '\0') || (numero[0] != '\0' && numero[0] != '0' && numero[0] != '1' && numero[1] == '9' && numero[2] == '\0' && numero[3] == '\0') || (numero[0] != '\0' && numero[0] != '0' && numero[1] != '\0' && numero[1] != '1' && numero[2] == '9' && numero[3] == '\0')){
+		
+		printf("nove");
+		
+	}else if((numero[0] == '8' && numero[1] == '\0' && numero[2] == '\0' && numero[3] == '\0') || (numero[0] != '\0' && numero[0] != '0' && numero[0] != '1' && numero[1] == '8' && numero[2] == '\0' && numero[3] == '\0') || (numero[0] != '\0' && numero[0] != '0' && numero[1] != '\0' && numero[1] != '1' && numero[2] == '8' && numero[3] == '\0')){
+		
+		printf("oito");
+		
+	}else if((numero[0] == '7' && numero[1] == '\0' && numero[2] == '\0' && numero[3] == '\0') || (numero[0] != '\0' && numero[0] != '0' && numero[0] != '1' && numero[1] == '7' && numero[2] == '\0' && numero[3] == '\0') || (numero[0] != '\0' && numero[0] != '0' && numero[1] != '\0' && numero[1] != '1' && numero[2] == '7' && numero[3] == '\0')){
+		
+		printf("sete");
+		
+	}else if((numero[0] == '6' && numero[1] == '\0' && numero[2] == '\0' && numero[3] == '\0') || (numero[0] != '\0' && numero[0] != '0' && numero[0] != '1' && numero[1] == '6' && numero[2] == '\0' && numero[3] == '\0') || (numero[0] != '\0' && numero[0] != '0' && numero[1] != '\0' && numero[1] != '1' && numero[2] == '6' && numero[3] == '\0')){
+		
+		printf("seis");
+		
+	}else if((numero[0] == '5' && numero[1] == '\0' && numero[2] == '\0' && numero[3] == '\0') || (numero[0] != '\0' && numero[0] != '0' && numero[0] != '1' && numero[1] == '5' && numero[2] == '\0' && numero[3] == '\0') || (numero[0] != '\0' && numero[0] != '0' && numero[1] != '\0' && numero[1] != '1' && numero[2] == '5' && numero[3] == '\0')){
+		
+		printf("cinco");
+		
+	}else if((numero[0] == '4' && numero[1] == '\0' && numero[2] == '\0' && numero[3] == '\0') || (numero[0] != '\0' && numero[0] != '0' && numero[0] != '1' && numero[1] == '4' && numero[2] == '\0' && numero[3] == '\0') || (numero[0] != '\0' && numero[0] != '0' && numero[1] != '\0' && numero[1] != '1' && numero[2] == '4' && numero[3] == '\0')){
+		
+		printf("quatro");
+		
+	}else if((numero[0] == '3' && numero[1] == '\0' && numero[2] == '\0' && numero[3] == '\0') || (numero[0] != '\0' && numero[0] != '0' && numero[0] != '1' && numero[1] == '3' && numero[2] == '\0' && numero[3] == '\0') || (numero[0] != '\0' && numero[0] != '0' && numero[1] != '\0' && numero[1] != '1' && numero[2] == '3' && numero[3] == '\0')){
+		
+		printf("três");
+		
+	}else if((numero[0] == '2' && numero[1] == '\0' && numero[2] == '\0' && numero[3] == '\0') || (numero[0] != '\0' && numero[0] != '0' && numero[0] != '1' && numero[1] == '2' && numero[2] == '\0' && numero[3] == '\0') || (numero[0] != '\0' && numero[0] != '0' && numero[1] != '\0' && numero[1] != '1' && numero[2] == '2' && numero[3] == '\0')){
+		
+		printf("dois");
+		
+	}else if((numero[0] == '1' && numero[1] == '\0' && numero[2] == '\0' && numero[3] == '\0') || (numero[0] != '\0' && numero[0] != '0' && numero[0] != '1' && numero[1] == '1' && numero[2] == '\0' && numero[3] == '\0') || (numero[0] != '\0' && numero[0] != '0' && numero[1] != '\0' && numero[1] != '1' && numero[2] == '1' && numero[3] == '\0')){
+		
+		printf("um");
+		
+	}else if(numero[0] == '0' && numero[1] == '\0' && numero[2] == '\0' && numero[3] == '\0'){
+			
+		printf("zero");
+		
+	}
+	
+	//Espaço final
+	printf("\n\n");
+	
+	
+	return 0;
+}
